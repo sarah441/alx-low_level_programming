@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
-  *main - Entry point
-  *description : computes the absolute value of an integer.
-  *Return:  Always 0
-*/
-int _abs(int c)
+ * int_abs is the integer to be checked
+ *
+ * Return: The absolute value of the integer.
+ */
+int _abs(int)
 {
 	if (c < 0)
 	{
@@ -14,5 +14,5 @@ int _abs(int c)
 		abs_val = c * -1;
 		return (abs_val);
 	}
-        return (c);
+	return (c);
 }
