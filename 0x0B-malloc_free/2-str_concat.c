@@ -1,52 +1,37 @@
 #include "main.h"
 #include <stdlib.h>
-/**
- * str_concat - create an array of chars
- * @s1: the size of the array
- * @s2: the charachter
- *
- * Return: the two strings concatenated
- */
 
+/**
+ * str_concat - concatenates two strings
+ * @s1: string 1
+ * @s2: string 2
+ *
+ * Return: pointer to new string
+ */
 char *str_concat(char *s1, char *s2)
 {
-	int i = 0, j = 0, k = 0, l = 0;
-	char *s;
+	char *new;
+	int s1_len, s2_len, i, j;
 
-	if (s1 == NULL)
-		s1 = "";
+	s1 == NULL ? s1 = "" : s1;
+	s2 == NULL ? s2 = "" : s2;
 
-	if (s2 == NULL)
-		s2 = "";
+	for (s1_len = 0; s1[s1_len]; s1_len++)
+		;
+	for (s2_len = 0; s2[s2_len]; s2_len++)
+		;
 
-	while (s1[i])
-		i++;
-
-	while (s2[i])
-		j++;
-
-	l = i + j;
-	s = malloc((sizeof(char) * l) + 1);
-
-	if (s == NULL)
+	new = malloc(sizeof(char) * (s1_len + s2_len + 1));
+	if (!new)
 		return (NULL);
 
-	j = 0;
+	for (i = 0; i < s1_len; i++)
+		new[i] = s1[i];
 
-	while (k < l)
-	{
-		if (k <= i)
-			s[k] = s1[k];
+	for (j = 0; j < s2_len; j++)
+		new[i + j] = s2[j];
 
-		if (k >= i)
-		{
-			s[k] = s2[j];
-			j++;
-		}
+	new[i + j] = '\0';
 
-		k++;
-	}
-
-	s[k] = '\0';
-	return (s);
+	return (new);
 }
