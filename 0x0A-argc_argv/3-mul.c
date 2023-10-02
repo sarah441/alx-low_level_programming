@@ -9,18 +9,20 @@
  * Return: If the program receives two arguments - 0.
  *         If the program does not receive two arguments - 1.
  */
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
 int z;
 
-if (argc == 3) {
+if (argc == 3)
+{
 z = atoi(argv[1]) * atoi(argv[2]);
 printf("%d\n", z);
-return 0;
+return (0);
 }
 else
 {
 printf("error\n");
-return 1;
+return (1);
 }
 }
 
