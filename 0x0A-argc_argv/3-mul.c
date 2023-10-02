@@ -11,18 +11,19 @@
  */
 int main(int argc, char *argv[])
 {
-int z;
+	int n1, n2, mult;
 
-if (argc == 3)
-{
-z = atoi(argv[1]) * atoi(argv[2]);
-printf("%d\n", z);
-return (0);
-}
-else
-{
-printf("error\n");
-return (1);
-}
-}
+	if (argc != 3)
+	{
+		printf("Error\n");
+		return (1);
+	}
 
+	n1 = atoi(argv[1]);
+	n2 = atoi(argv[2]);
+	mult = n1 * n2;
+
+	printf("%d\n", mult);
+
+	return (0);
+}
